@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "commonjs",
+    "strict": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "outDir": "../release/source",
+    "declarationDir": "../release/types"
+  },
+  "include": [
+    "./**/*"
+  ]
+}

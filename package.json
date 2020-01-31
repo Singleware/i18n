@@ -1,0 +1,54 @@
+{
+  "author": {
+    "name": "Silas B. Domingos",
+    "email": "hello@balmante.eti.br",
+    "url": "https://balmante.eti.br"
+  },
+  "name": "@singleware/i18n",
+  "description": "Singleware i18n package.",
+  "license": "MIT",
+  "version": "1.0.3",
+  "main": "release/source/index.js",
+  "types": "release/types/index.d.ts",
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "singleware"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/singleware/i18n"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "@singleware/class": "^1.1.19",
+    "@singleware/jsx": "^1.0.29"
+  },
+  "devDependencies": {
+    "@singleware/testing": "^1.0.0",
+    "@types/node": "^11.11.5",
+    "prettier": "^1.16.4",
+    "typescript": "^3.7.5"
+  },
+  "prettier": {
+    "printWidth": 125,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "semi": true
+  },
+  "scripts": {
+    "prepublishOnly": "npm test",
+    "test": "node ./release/tests/suite.js",
+    "start": "node ./release/examples/basic.js",
+    "clean": "rm -rf ./release",
+    "make": "npm run make-source && npm run make-examples && npm run make-tests",
+    "update": "npm run update-source",
+    "build": "npm run clean && npm run make && npm run update",
+    "make-source": "npx tsc -p ./source",
+    "make-examples": "npx tsc -p ./examples",
+    "make-tests": "npx tsc -p ./tests",
+    "update-source": "cp -Rf ./source/types/*.d.ts ./release/types/types"
+  }
+}
